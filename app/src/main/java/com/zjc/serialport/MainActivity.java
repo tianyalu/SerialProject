@@ -40,6 +40,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seri
         switch (v.getId()) {
             case R.id.btn_open:
                 boolean isOpen = SerialPortUtil.open("/dev/ttyS3", 115200, 0);
+                //boolean isOpen = SerialPortUtil.open("/dev/ttyS1", 96000, 0);
                 if (isOpen) {
                     Log.e("TAG", "打开成功");
                 } else {

@@ -55,7 +55,7 @@ public class SerialPortUtil {
      * 关闭串口
      */
     public static boolean close() {
-        if (isFlagSerial) {
+        if (!isFlagSerial) {
             return false;
         }
         boolean isClose = false;
@@ -102,7 +102,8 @@ public class SerialPortUtil {
             public void run() {
                 while (isFlagSerial) {
                     try {
-                        byte[] readData = new byte[32];
+                        //byte[] readData = new byte[32];
+                        byte[] readData = new byte[64];
                         if (inputStream == null) {
                             return;
                         }
